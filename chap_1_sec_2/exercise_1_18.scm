@@ -5,7 +5,7 @@
 ; a logarithmic number of steps
 
 (define (double n) (* n 2))
-(define (halve n ) (/ n 2))
+(define (halve n) (/ n 2))
 (define (mult_iter a b)
 	(mult_iter_sub a b 0)
 )
