@@ -22,13 +22,19 @@
 
 ; ANSWER -------------------
 ; Applying the transformation T_pq once:
-; a <-- bq + aq + ap    = bq + a(p+q)
-; b <-- bp + aq         = bp + aq
+; a <-- bq + aq + ap    = bq + a(p+q)   and
+; b <-- bp + aq         = bp + aq.
 ;
-; Applying the transformation T_pq twice via substitution:
-; a <-- (bp + aq)q + a(p+q)         = bpq + aq^2 + ap + aq              = b(pq) + a(p + q + q^2)
-; b <-- (bp + aq)p + (bq + a(p+q))q = bp^2 + apq + bq^2 + apq + aq^2    = b(p^2 + q^2) + a(2pq + q^2)
-
+; Applying the transformation T_pq twice via substitution and rearranging terms with an eye toward needed form:
+; a <-- (bp + aq)q + (bq + aq + ap)q + (bq + aq + ap)p 
+;     = b(2pq + q^2) + a(q^2 + q^2 + 2pq + p^2)
+;     = b(2pq + q^2) + a(2pq + q^2) + a(q^2 + p^2).
+; b <-- (bp + aq)p + (bq + aq + ap)q
+;     = b(q^2 + p^2) + a(2pq + q^2)
+; In this form, we can now get something like original transformation by defining
+; p'  = q^2 + p^2
+; q'  = 2pq + q^2
+;
 
 (define (fib n) (fib-iter 1 0 0 1 n))
 (define (fib-iter a b p q count) (cond ((= count 0) b)
