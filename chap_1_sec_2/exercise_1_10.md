@@ -37,7 +37,7 @@ Answers:
 
 (5) (g n) computes 2*2*2... n times = 2^n
 
-(6) (h n) --> (A 2 n) --> (A 1 (A 2 (n-1))) --> (g (A 2 (n-1))) --> 2^((A 2 (n-1))) --> 2^(h (n-1)) --> 2^(2^(2...)) with n exponentiations of 2. 
+(6) (h n) --> (A 2 n) --> (A 1 (A 2 (n-1))) --> (g (A 2 (n-1))) --> 2^((A 2 (n-1))) --> 2^(h (n-1)) --> 2^(2^(2...)) with n embedded exponentiations of 2. Note that the parenthesis are necessary to get the right-to-left order of operations.
 
 (7) (k n) computes 5n^2 (answer given in text)
 
