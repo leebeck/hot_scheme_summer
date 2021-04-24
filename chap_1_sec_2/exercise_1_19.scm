@@ -62,3 +62,25 @@
                         p
                         q
                         (- count 1)))))
+;
+; my question: why is this diving counter by two rather than decrementing by two?
+; We have T defined like this:
+; a <-- a + b
+; b <-- a
+;
+; so for T^2 (applying T twice) we have this:
+; a <-- 2a + b
+; b <-- a + b
+;
+; example using halving and T^2 when counter is even:
+; (fib-iter 1 0 6) 
+;       counter is even, so cut it in half and apply T^2
+; (fib-iter 2 1 3)
+;       counter is odd, so decrement it and apply T
+; (fib-iter 3 2 2)
+;       counter is even, so cut it in half and apply T^2
+; (fib-iter 8 5 1)
+;       counter is odd, so decrement it and apply T
+; (fib-iter 13 8 0)
+;       counter is zero so return b
+; 8
