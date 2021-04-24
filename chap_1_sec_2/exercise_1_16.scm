@@ -14,6 +14,7 @@
 )
 
 ; fast-expt requires O(log n) steps and O(log n) space
+(define (square n) (* n n))
 (define 
   	(fast-expt b n) 
 	(cond 
