@@ -20,6 +20,16 @@
 ; procedure. Put this all together to complete the following procedure, which runs 
 ; in a logarithmic number of steps.
 
+; ANSWER -------------------
+; Applying the transformation T_pq once:
+; a <-- bq + aq + ap    = bq + a(p+q)
+; b <-- bp + aq         = bp + aq
+;
+; Applying the transformation T_pq twice via substitution:
+; a <-- (bp + aq)q + a(p+q)         = bpq + aq^2 + ap + aq              = b(pq) + a(p + q + q^2)
+; b <-- (bp + aq)p + (bq + a(p+q))q = bp^2 + apq + bq^2 + apq + aq^2    = b(p^2 + q^2) + a(2pq + q^2)
+
+
 (define (fib n) (fib-iter 1 0 0 1 n))
 (define (fib-iter a b p q count) (cond ((= count 0) b)
         ((even? count)
