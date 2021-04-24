@@ -84,3 +84,6 @@
 ; (fib-iter 13 8 0)
 ;       counter is zero so return b
 ; 8
+; That is correct, since Fib sequence goes like this: 0 1 1 2 3 5 8.
+; Note that values of b calculated above go like this: 0, 1, 2, 5, 8.
+; So the counter is the number of MOVES, not the place in the sequence.
