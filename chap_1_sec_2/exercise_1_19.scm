@@ -32,10 +32,23 @@
 ; b <-- (bp + aq)p + (bq + aq + ap)q
 ;     = b(q^2 + p^2) + a(2pq + q^2).
 ;
-; We can now define p' and q' so that T_p'q' = (T_pq)^2 like so:
+; Now defining p' and q' so that T_p'q' = (T_pq)^2 like so:
 ; p'  = q^2 + p^2 and
 ; q'  = 2pq + q^2.
 ;
+; In the special case of Fibonacci (p = 0, q = 1) we have
+; p'  = 1 + 0^2         = 1 and
+; q'  = 2*0*1 + 1^2     = 1.
+;
+; This makes sense because applying T once gives:
+; a <-- a + b,
+; b <-- a;
+; 
+; and applying T again gives:
+; a <-- (a + b) + a = 2a + b = bq' + aq' + ap',
+; b <-- (a + b)     = a + b  = bp' + aq',
+; where p' = 1 and q' = 1.
+
 
 (define (fib n) (fib-iter 1 0 0 1 n))
 (define (fib-iter a b p q count) (cond ((= count 0) b)
