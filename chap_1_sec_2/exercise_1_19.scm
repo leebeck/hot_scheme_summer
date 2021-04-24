@@ -62,8 +62,12 @@
                         p
                         q
                         (- count 1)))))
+; Fib sequence goes like this: 
+; F0	F1	F2	F3	F4	F5	F6	F7	F8	F9	F10	F11	F12	F13	F14	F15	F16
+; 0	1	1	2	3	5	8	13	21	34	55	89	144	233	377	610	987
 ;
 ; my question: why is this diving counter by two rather than decrementing by two?
+;
 ; We have T defined like this:
 ; a <-- a + b
 ; b <-- a
@@ -72,18 +76,21 @@
 ; a <-- 2a + b
 ; b <-- a + b
 ;
-; example using halving and T^2 when counter is even:
-; (fib-iter 1 0 6) 
-;       counter is even, so cut it in half and apply T^2
-; (fib-iter 2 1 3)
-;       counter is odd, so decrement it and apply T
-; (fib-iter 3 2 2)
-;       counter is even, so cut it in half and apply T^2
-; (fib-iter 8 5 1)
-;       counter is odd, so decrement it and apply T
-; (fib-iter 13 8 0)
-;       counter is zero so return b
-; 8
-; That is correct, since Fib sequence goes like this: 0 1 1 2 3 5 8.
-; Note that values of b calculated above go like this: 0, 1, 2, 5, 8.
-; So the counter is the number of MOVES, not the place in the sequence.
+; so for T^4 (applying T^2 twice) we have this:
+; a <-- 5a + 3b 
+; b <-- 3a + 2b
+; 
+; so for T^8 (applying T^4 twice) we have this:
+; a <-- 34a + 21b
+; b <-- 21a + 13b
+; 
+; THIS IS WRONG BELOW
+; Now trying with a higher power of 2:
+; (fib 8) 
+;       start with a = 1, b = 0 (F_0 = b = 0) 
+;       with a=1  b=0 counter=8, halve counter (=4) and do T^2 to skip 2
+;       now  a=2  b=1 counter=4, halve counter (=2) and do T^4 to skip 4
+;       now  a=13 b=8 counter=2, halve counter (=1) and so T^8 to skip 8
+;       now  a=610 b=377 counter=1, decrement counter (=0) and 
+;       
+;       
