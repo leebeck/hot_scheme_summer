@@ -21,11 +21,11 @@
 ; in a logarithmic number of steps.
 
 ; ANSWER -------------------
-; Applying the transformation T_pq once:
-; a <-- bq + aq + ap    = bq + a(p+q)   and
-; b <-- bp + aq         = bp + aq.
+; Applying the transformation T_pq once looks like this:
+; a <-- bq + aq + ap and 
+; b <-- bp + aq.
 ;
-; Applying the transformation T_pq twice via substitution and rearranging terms with an eye toward needed form:
+; Applying the transformation T_pq twice (via substitution) and then rearranging to preserve form:
 ; a <-- (bp + aq)q + (bq + aq + ap)q + (bq + aq + ap)p 
 ;     = b(2pq + q^2) + a(q^2 + q^2 + 2pq + p^2)
 ;     = b(2pq + q^2) + a(2pq + q^2) + a(q^2 + p^2).
