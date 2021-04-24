@@ -30,10 +30,11 @@
 ;     = b(2pq + q^2) + a(q^2 + q^2 + 2pq + p^2)
 ;     = b(2pq + q^2) + a(2pq + q^2) + a(q^2 + p^2).
 ; b <-- (bp + aq)p + (bq + aq + ap)q
-;     = b(q^2 + p^2) + a(2pq + q^2)
-; In this form, we can now get something like original transformation by defining
-; p'  = q^2 + p^2
-; q'  = 2pq + q^2
+;     = b(q^2 + p^2) + a(2pq + q^2).
+;
+; We can now define p' and q' so that T_p'q' = (T_pq)^2 like so:
+; p'  = q^2 + p^2 and
+; q'  = 2pq + q^2.
 ;
 
 (define (fib n) (fib-iter 1 0 0 1 n))
