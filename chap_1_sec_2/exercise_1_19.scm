@@ -88,9 +88,9 @@
 ; Now trying with a higher power of 2:
 ; (fib 8) 
 ;       start with a = 1, b = 0 (F_0 = b = 0) 
-;       with a=1  b=0 counter=8, halve counter (=4) and do T^2 to skip 2
-;       now  a=2  b=1 counter=4, halve counter (=2) and do T^4 to skip 4
-;       now  a=13 b=8 counter=2, halve counter (=1) and so T^8 to skip 8
+;       with a=1  b=0 counter=8, halve counter (=4) and do T^2 to move forward 2 numbers in Fib seq
+;       now  a=2  b=1 counter=4, halve counter (=2) and do T^4 to move forward 4 numbers in Fib seq
+;       now  a=13 b=8 counter=2, halve counter (=1) and do T to move forward 1 number in Fib seq
 ;       now  a=610 b=377 counter=1, decrement counter (=0) and 
 ;       
 ;       
